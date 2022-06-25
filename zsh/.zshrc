@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search git zsh-autosuggestions zsh-syntax-highlighting rand-quote themes cp)
+plugins=(z vi-mode zsh-completions web-search git zsh-autosuggestions zsh-syntax-highlighting rand-quote themes cp)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,11 +102,29 @@ alias zshconfig="mate ~/.zshrc"
 alias ll="ls -alF"
 alias proxy="source /home/demo/.proxyrc"
 alias src="source ~/.zshrc"
+alias c='func() { cd $1 && ll; }; func'
 
 
-quote | cowsay
+# alias hexo
+alias hd="hexo clean && hexo g && hexo d"
+alias hs="hexo clean && hexo g && hexo d && hexo s"
+
+# alias windows app
+alias tp='func() { /mnt/d/Typora/Typora.exe $1;}; func'
+
+# quote | cowsay
 
 
 export JAVA_HOME=/opt/module/jdk1.8.0_202
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+# Hadoop环境
+export HADOOP_HOME=/opt/module/hadoop-3.2.3
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export JAVA_LIBRAY_PATH=/usr/local/hadoop/lib/native
+
+# Spark环境
+export SPARK_HOME=/opt/module/spark-3.2.1-bin-hadoop3.2
+export PATH=$PATH:${SPARK_HOME}/bin
