@@ -30,7 +30,7 @@ func main() {
 }
 
 func LearnStruct() int {
-	fmt.Println("LearnStruct ===> ")
+	fmt.Println("LearnStruct ==> ")
 	return 1
 }
 
