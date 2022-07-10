@@ -9,6 +9,10 @@ import (
 )
 
 func main() {
+	main1()
+}
+
+func LearnGo() {
 	const domain = "https://poxiao.tk/"
 	const domain1 = "https://poxiao.tk/"
 
@@ -39,3 +43,5 @@ type Person struct {
 	Age   int
 	Email string
 }
+
+// 遍历map
