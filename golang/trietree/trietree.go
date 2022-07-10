@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
+
+var strToInt string
 
 // Trie 树节点
 type trieNode struct {
@@ -53,12 +58,14 @@ func (t *Trie) Find(word string) bool {
 	node := t.root
 	for _, code := range word {
 		value, ok := node.children[code] // 获取对应子节点
+		fmt.Println(value)
 		if !ok {
 			// 不存在则直接返回
 			return false
 		}
 		// 否则继续往后遍历
 		node = value
+		strToInt += strconv.Itoa(int(code))
 	}
 
 	return node.isEnding
@@ -70,16 +77,19 @@ func (t *Trie) Find(word string) bool {
 }
 
 func main() {
-	fmt.Println(int('0'))
 	trie := NewTrie()
 	words := []string{"Golang", "学院君", "Language", "Trie", "Go"}
 	for _, word := range words {
 		trie.Insert(word)
 	}
-	term := "学院君"
+	// term := "学院君"
+	term := "Golang"
 	if trie.Find(term) {
 		fmt.Printf("包含单词\"%s\"\n", term)
 	} else {
 		fmt.Printf("不包含单词\"%s\"\n", term)
 	}
+
+	fmt.Println(strToInt)
+
 }
