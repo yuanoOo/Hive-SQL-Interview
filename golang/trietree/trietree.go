@@ -43,6 +43,7 @@ func (t *Trie) Insert(word string) {
 		}
 		// 当前节点指针指向当前子节点
 		node = value
+		// fmt.Println(node.char)
 	}
 	node.isEnding = true // 一个单词遍历完所有字符后将结尾字符打上标记
 }
@@ -68,7 +69,8 @@ func (t *Trie) Find(word string) bool {
 	// return true // 找到对应单词
 }
 
-func main1() {
+func main() {
+	fmt.Println(int('0'))
 	trie := NewTrie()
 	words := []string{"Golang", "学院君", "Language", "Trie", "Go"}
 	for _, word := range words {
