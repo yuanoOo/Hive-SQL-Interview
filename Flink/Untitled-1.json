@@ -1,0 +1,27 @@
+bin/kafka-console-producer.sh --topic products_ogg --bootstrap-server localhost: 9092
+
+bin/kafka-topics.sh --create --topic products_ogg --bootstrap-server localhost:9092
+
+{
+    "before": {
+        "id": 111,
+        "name": "scooter",
+        "description": "Big 2-wheel scooter",
+        "weight": 5.18
+    },
+    "after": {
+        "id": 111,
+        "name": "scooter",
+        "description": "Big 2-wheel scooter",
+        "weight": 5.15
+    },
+    "op_type": "U",
+    "op_ts": "2020-05-13 15:40:06.000000",
+    "current_ts": "2020-05-13 15:40:07.000000",
+    "primary_keys": [
+        "id"
+    ],
+    "pos": "00000000000000000000143",
+    "table": "PRODUCTS"
+}
+
